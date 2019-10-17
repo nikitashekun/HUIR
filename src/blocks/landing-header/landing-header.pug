@@ -1,12 +1,12 @@
-//- Все примеси в этом файле должны начинаться c имени блока (logo)
+//- Все примеси в этом файле должны начинаться c имени блока (landing-header)
 
-mixin logo(text, mods)
+mixin landing-header(text, mods)
 
   //- Принимает:
   //-   text    {string} - текст
   //-   mods    {string} - список модификаторов
   //- Вызов:
-        +logo('Текст', 'some-mod')
+        +landing-header('Текст', 'some-mod')
 
   -
     // список модификаторов
@@ -14,10 +14,10 @@ mixin logo(text, mods)
     if(typeof(mods) !== 'undefined' && mods) {
       var modsList = mods.split(',');
       for (var i = 0; i < modsList.length; i++) {
-        allMods = allMods + ' logo--' + modsList[i].trim();
+        allMods = allMods + ' landing-header--' + modsList[i].trim();
       }
     }
 
-  .logo(class=allMods)&attributes(attributes)
-    .logo__inner
-      block
+  .landing-header(class=allMods)&attributes(attributes)
+    +logo()
+    +btn()

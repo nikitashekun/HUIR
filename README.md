@@ -1,0 +1,1 @@
+git-pages https://nikitashekun.github.io/HUIR/
