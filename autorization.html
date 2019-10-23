@@ -34,15 +34,23 @@
 </script>
 </head>
 
-<body><noscript>У вас отключен JavaScript. Это пугает.</noscript>
-  <div class="landing-header">
-    <div class="landing-header__header">
-      <div class="logo  logo--mod"><img class="logo__img" src="img/logo.png" /></div><a class="btn  btn--mod" href="autorization.html"> Войти</a>
+<body class="black">
+  <div class="autorization">
+    <div class="autorization__bg-image">
+      <p> </p>
     </div>
-    <div class="landing-header__search"></div>
-  </div>
-  <div class="landing-content">
-    <p>kek</p>
+    <div class="autorization__form">
+      <form>
+        <p class="autorization__text">Вход в личный кабинет</p><input class="autorization__input" type="email" name="username" required="required" spellcheck="false" autocorrect="off" autocapitalize="off" placeholder="Ваш Email" /><input class="autorization__input" type="password" name="password" required="required" spellcheck="false" autocorrect="off" autocapitalize="off" placeholder="Пароль" /><input class="autorization__submit" type="submit" value="Войти в личный кабинет" />
+        <div class="autorization__login-remember"><label class="autorization__checkbox"><input class="autorization__input-checkbox" type="checkbox" checked="" name="remember" value="yes" />
+            <div class="autorization__input-checkbox-text">Запомнить</div>
+          </label><a class="autorization__login-remember-password" href="#">Получить пароль</a></div>
+        <div class="autorization__social-login">
+          <div class="autorization__social-text">Вход через соцсети</div>
+          <div class="autorization__social-logo"><a class="autorization__social-logo-1"></a><a class="autorization__social-logo-2"></a></div>
+        </div><a class="autorization__registration">Зарегистрироваться</a>
+      </form>
+    </div>
   </div>
   <script src="js/bundle.js"></script>
 
