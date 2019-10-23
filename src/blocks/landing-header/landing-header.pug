@@ -19,5 +19,7 @@ mixin landing-header(text, mods)
     }
 
   .landing-header(class=allMods)&attributes(attributes)
-    +logo()
-    +btn()
+    .landing-header__header
+      +logo('', 'mod')
+      +btn('autorization.html','Войти','mod')
+    .landing-header__search

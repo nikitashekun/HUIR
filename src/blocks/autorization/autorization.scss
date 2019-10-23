@@ -1,0 +1,275 @@
+// В этом файле должны быть стили для БЭМ-блока autorization, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.autorization {
+
+  &__bg-image {
+    height: 100vh;
+    background: url(../img/autorization-bg.jpg), #000;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    filter: blur(5px);
+    user-select: none;
+    overflow: hidden;
+  }
+
+  &__form {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 290px;
+    height: 400px;
+    padding: 25px 20px;
+    margin-top: 25px;
+    margin-left: -145px;
+    filter: blur(none);
+    background-color: #f8f8f8;
+  }
+
+  &__text {
+    font-size: 17px;
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+    line-height: 21px;
+    margin-bottom: 20px;
+  }
+
+  &__input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 38px;
+    border: 1px solid $autorization-input-border;
+    padding: 0 11px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #fff;
+    line-height: 38px;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0;
+    text-shadow: none;
+    text-align: start;
+    cursor: text;
+    margin-bottom: 20px;
+
+    &:focus {
+      box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.1235), 0 1px rgba(0, 0, 0, 0.15);
+      border-color: #0f8fee;
+      outline: none;
+    }
+
+    &:hover {
+      border-color: #acb5ba;
+    }
+  }
+
+  &__submit {
+    box-sizing: border-box;
+    width: 100%;
+    height: 38px;
+    border: 1px solid $autorization-submit-border;
+    background-color: $autorization-submit-border;
+    padding: 0 11px;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    line-height: 36px;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0;
+    text-shadow: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    user-select: none;
+
+    &:focus {
+      box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.1235), 0 1px rgba(0, 0, 0, 0.15);
+      border-color: #0f8fee;
+      background-color: #3da5f3;
+      outline: none;
+    }
+
+    &:hover {
+      border-color: #0e81d6;
+      background-color: #0e81d6;
+    }
+  }
+
+  &__login-remember {
+    display: flex;
+    justify-content: space-between;
+    line-height: 21px;
+    font-size: 14px;
+  }
+
+  &__checkbox {
+    display: inline-table;
+    position: relative;
+    margin-left: 24px;
+    outline: none;
+    line-height: 21px;
+    font-size: 14px;
+
+    &:hover .autorization__input-checkbox-text:before {
+      border-color: #acb5ba;
+    }
+  }
+
+  &__input-checkbox-text {
+    display: table-cell;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    position: relative;
+
+    &:before {
+      content: ' ';
+      box-sizing: border-box;
+      display: inline-block;
+      position: absolute;
+      top: 3px;
+      right: 100%;
+      bottom: 0;
+      width: 16px;
+      height: 16px;
+      margin-right: 8px;
+      background: #fff;
+      border: 1px solid #cbd1d4;
+      background-repeat: no-repeat;
+      background-position: 50%;
+    }
+  }
+
+  &__input-checkbox {
+    display: table-cell;
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 16px;
+    height: 16px;
+
+    &:active + .autorization__input-checkbox-text:before,
+    &:focus + .autorization__input-checkbox-text:before {
+      box-shadow: 0 1px rgba(0, 0, 0, 0.15);
+      border-color: #0f8fee;
+    }
+
+    &:checked + .autorization__input-checkbox-text:before {
+      background-image: url(../img/checkbox-checked.svg);
+      border-color: #0f8fee;
+      background-color: #0f8fee;
+    }
+
+    &:checked:hover + .autorization__input-checkbox-text:before {
+      border-color: #0e81d6;
+      background-color: #0e81d6;
+    }
+
+    &:checked:active + .autorization__input-checkbox-text:before,
+    &:checked:focus + .autorization__input-checkbox-text:before {
+      border-color: #0f8fee;
+      background-color: #3da5f3;
+    }
+  }
+
+  &__login-remember-password {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    text-decoration: none;
+    color: #09f;
+
+    &:active,
+    &:hover,
+    &:focus {
+      color: #c00;
+      outline: none;
+    }
+  }
+
+  &__social-login {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  &__social-text {
+    display: table;
+    color: #9a9a9a;
+    margin: 5px auto;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+  }
+
+  &__social-logo {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  [class^='autorization__social-logo-'] {
+    box-sizing: border-box;
+    position: relative;
+    min-width: 30px;
+    height: 30px;
+    cursor: pointer;
+    user-select: none;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 16px;
+      height: 16px;
+      margin: 7px;
+      background-position: -18px 0;
+    }
+  }
+
+  &__social-logo-1 {
+    background-color: #4c76a4;
+
+    &:after {
+      background-image: url(../img/autorization__social-logo-1.svg);
+    }
+
+    &:hover {
+      background-color: #446a94;
+    }
+  }
+
+  &__social-logo-2 {
+    background-color: #4285f4;
+
+    &:after {
+      background-image: url(../img/autorization__social-logo-2.svg);
+    }
+
+    &:hover {
+      background-color: #2572f2;
+    }
+  }
+
+  &__registration {
+    display: table;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    text-decoration: none;
+    color: #09f;
+    cursor: pointer;
+    margin: 0 auto;
+
+    &:active,
+    &:hover,
+    &:focus {
+      color: #c00;
+      outline: none;
+    }
+  }
+}

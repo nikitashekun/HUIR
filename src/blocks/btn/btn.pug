@@ -1,12 +1,13 @@
 //- Все примеси в этом файле должны начинаться c имени блока (btn)
 
-mixin btn(text, mods)
+mixin btn(link, text, mods)
 
   //- Принимает:
-  //-   text    {string} - текст
+  //-   link    {string} - Ссылка
+  //-   text    {string} - Текст кнопки
   //-   mods    {string} - список модификаторов
   //- Вызов:
-        +btn('Текст', 'some-mod')
+        +btn('Ссылка', 'Текст', 'some-mod')
 
   -
     // список модификаторов
@@ -18,5 +19,5 @@ mixin btn(text, mods)
       }
     }
 
-  a.btn(class=allMods)&attributes(attributes)
-    |huy pizda
+  a.btn(class=allMods, href=link)&attributes(attributes)
+  |#{text}

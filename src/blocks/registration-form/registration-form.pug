@@ -1,0 +1,27 @@
+//- Все примеси в этом файле должны начинаться c имени блока (registration-form)
+
+mixin registration-form(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +registration-form('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' registration-form--' + modsList[i].trim();
+      }
+    }
+
+  .registration-form(class=allMods)&attributes(attributes)
+    form.registration-form__form
+      input.registration-form__input(type=text)
+      input.registration-form__input(type=password)
+      input.registration-form__input(type=text)
+      input.registration-form__input(type=text)
+      input.registration-form__input(type=text)

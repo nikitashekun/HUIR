@@ -1,0 +1,40 @@
+//- Все примеси в этом файле должны начинаться c имени блока (autorization)
+
+mixin autorization(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +autorization('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' autorization--' + modsList[i].trim();
+      }
+    }
+
+  .autorization(class=allMods)&attributes(attributes)
+    .autorization__bg-image
+      p
+    .autorization__form
+      form
+        p.autorization__text Вход в личный кабинет
+        input.autorization__input(type=email, name=username, required=required, spellcheck=false, autocorrect=off, autocapitalize=off, placeholder='Ваш Email')
+        input.autorization__input(type=password, name=password, required=required, spellcheck=false, autocorrect=off, autocapitalize=off, placeholder='Пароль')
+        input.autorization__submit(type=submit, value='Войти в личный кабинет')
+        .autorization__login-remember
+          label.autorization__checkbox
+            input.autorization__input-checkbox(type=checkbox, checked, name=remember, value=yes)
+            .autorization__input-checkbox-text Запомнить
+          a.autorization__login-remember-password(href='#') Получить пароль
+        .autorization__social-login
+          .autorization__social-text Вход через соцсети
+          .autorization__social-logo
+            a.autorization__social-logo-1
+            a.autorization__social-logo-2
+        a.autorization__registration Зарегистрироваться
